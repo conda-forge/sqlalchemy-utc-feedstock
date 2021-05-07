@@ -1,6 +1,6 @@
 {% set name = "SQLAlchemy-Utc" %}
-{% set version = "0.10.0" %}
-{% set sha256 = "821769ff3a2cbd1490e7057de0c87b1796df6e19453dcf9775617b616de428b4" %}
+{% set version = "0.12.0" %}
+{% set sha256 = "7aefe4f3bf6febcac681d88ad9d858ad0104776e5de660576b3a8eb8915f83fc" %}
 
 package:
   name: {{ name|lower }}
@@ -14,10 +14,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
